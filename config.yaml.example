@@ -1,0 +1,45 @@
+# Vanna Text-to-SQL 配置文件
+
+# LLM模型配置
+# 支持三种模式：ollama, openai, vllm
+# 使用 ollama 模式
+llm_type: "vllm"  # 可选: ollama, openai, vllm
+
+# Ollama配置（当 llm_type=ollama 时使用）
+ollama:
+  model: "qwen3:32b"
+  ollama_host: "http://ip:port"
+  allow_llm_to_see_data: true
+
+# OpenAI兼容API配置（当 llm_type=openai 或 llm_type=vllm 时使用）
+# vLLM 通常提供 OpenAI 兼容的 API 接口
+openai:
+  api_key: "EMPTY"  # vLLM 通常不需要真实的 API key，可以设置为 "EMPTY"
+  api_base: "http://ip:port/v1"  # vLLM 的 OpenAI 兼容接口地址
+  model: "qwen3-30b-instruct"  # 模型名称，需要与 vLLM 启动时指定的模型名称一致
+  allow_llm_to_see_data: true
+
+# MySQL数据库连接配置
+database:
+  host: "yourhost"
+  port: 12881
+  dbname: "dbname"
+  user: "root"
+  password: "123456"
+
+# Flask应用配置
+flask:
+  host: "0.0.0.0"
+  port: 5000
+  debug: false
+
+# 训练数据路径配置
+training:
+  ddl_path: "training_data/ddl.sql"
+  documents_path: "training_data/documents.md"
+  sql_examples_path: "training_data/sql_examples.json"
+
+# ChromaDB 持久化存储路径（可选）
+# 如果不配置，默认使用 data/chroma/ 目录
+# chroma_db_path: "data/chroma"
+

@@ -1,0 +1,82 @@
+# ===== Python 相关 =====
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+*.pdb
+*.egg-info/
+*.egg
+*.manifest
+*.spec
+
+# 虚拟环境
+venv/
+env/
+.venv/
+
+# 数据库与缓存文件
+*.db
+*.sqlite3
+*.log
+*.pid
+chroma.sqlite3
+
+# 数据目录（包含 ChromaDB 数据、日志等）
+data/
+
+# ChromaDB 生成的 UUID 目录（格式：8-4-4-4-12）
+# 例如：c78d53c4-ec60-4586-bb61-a348def2f47b
+*-*-*-*-*/
+
+# 日志文件
+logs/
+*.log.*
+
+# 临时文件
+*.tmp
+*.bak
+*.swp
+
+# ===== 编辑器 & IDE =====
+# PyCharm / IntelliJ
+.idea/*
+*.iml
+
+# VSCode
+.vscode/
+.history/
+
+# ===== 操作系统垃圾文件 =====
+.DS_Store
+Thumbs.db
+ehthumbs.db
+desktop.ini
+
+# ===== 前端构建相关 =====
+node_modules/
+dist/
+build/
+coverage/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# ===== 上传与输出文件 =====
+uploads/
+output/
+export/
+__output__/
+*.docx
+*.xlsx
+*.pdf
+
+# ===== 本地配置或测试脚本 =====
+*.bat
+*.sh
+*.env
+.env.*
+config.local.py
+config_dev.py
+
+config.yaml

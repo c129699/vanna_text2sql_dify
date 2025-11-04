@@ -1,0 +1,211 @@
+openapi: 3.0.0
+
+info:
+  title: Text2SQL API
+  version: 1.0.0
+  description: 将自然语言问题转换为SQL查询。适用于查询政务服务实施清单表(info_fwsx_ssqd)。
+
+servers:
+  - url: http://10.100.157.178:5000
+    description: Text2SQL API 服务器地址
+
+paths:
+  /text2sql:
+    post:
+      operationId: text2sql
+      summary: 将自然语言问题转换为SQL查询
+      description: 接收自然语言问题，返回对应的SQL查询语句
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - question
+              properties:
+                question:
+                  type: string
+                  description: 自然语言问题，例如：查询所有事项名称、查询免费办理的事项、查询支持预约的事项等
+                  example: 查询所有事项名称
+      responses:
+        '200':
+          description: 成功返回SQL查询
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  sql:
+                    type: string
+                    description: 生成的SQL查询语句
+                    example: SELECT matter_name FROM info_fwsx_ssqd WHERE del_flag = '0'
+                  question:
+                    type: string
+                    description: 输入的自然语言问题
+                    example: 查询所有事项名称
+                  status:
+                    type: string
+                    description: 响应状态
+                    example: success
+        '400':
+          description: 请求参数错误
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                  status:
+                    type: string
+        '500':
+          description: 服务器内部错误
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                  status:
+                    type: string
+
+  /query:
+    post:
+      operationId: query
+      summary: 执行自然语言查询并返回结果
+      description: 接收自然语言问题，生成SQL查询，执行查询并返回结果数据
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - question
+              properties:
+                question:
+                  type: string
+                  description: 自然语言问题，例如：查询所有事项名称、查询免费办理的事项、查询支持预约的事项等
+                  example: 查询所有事项名称
+      responses:
+        '200':
+          description: 成功返回查询结果
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  sql:
+                    type: string
+                    description: 生成的SQL查询语句
+                    example: SELECT matter_name FROM info_fwsx_ssqd WHERE del_flag = '0'
+                  question:
+                    type: string
+                    description: 输入的自然语言问题
+                    example: 查询所有事项名称
+                  data:
+                    type: array
+                    description: 查询结果数据（数组格式）
+                    items:
+                      type: object
+                    example:
+                      - matter_name: "事项1"
+                      - matter_name: "事项2"
+                  row_count:
+                    type: integer
+                    description: 返回的行数
+                    example: 2
+                  columns:
+                    type: array
+                    description: 返回的列名
+                    items:
+                      type: string
+                    example:
+                      - matter_name
+                  status:
+                    type: string
+                    description: 响应状态
+                    example: success
+        '400':
+          description: 请求参数错误
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                  status:
+                    type: string
+        '500':
+          description: 服务器内部错误或SQL执行错误
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  sql:
+                    type: string
+                    description: 生成的SQL语句（如果SQL生成成功）
+                  question:
+                    type: string
+                    description: 输入的问题
+                  error:
+                    type: string
+                    description: 错误信息
+                  status:
+                    type: string
+                    description: 错误状态（error 或 sql_error）
+
+  /health:
+    get:
+      operationId: health
+      summary: 健康检查
+      description: 检查API服务器是否正常运行
+      responses:
+        '200':
+          description: 服务器正常
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: healthy
+                  service:
+                    type: string
+                    example: text2sql-api
+
+  /openapi.yaml:
+    get:
+      operationId: getOpenAPISpec
+      summary: 获取 OpenAPI 规范文件（YAML格式）
+      description: 返回 OpenAPI 3.0 规范文件
+      responses:
+        '200':
+          description: 成功返回 OpenAPI 规范
+          content:
+            text/yaml:
+              schema:
+                type: string
+        '404':
+          description: 文件不存在
+
+  /openapi.json:
+    get:
+      operationId: getOpenAPISpecJSON
+      summary: 获取 OpenAPI 规范文件（JSON格式）
+      description: 返回 OpenAPI 3.0 规范文件（JSON格式）
+      responses:
+        '200':
+          description: 成功返回 OpenAPI 规范
+          content:
+            application/json:
+              schema:
+                type: object
+        '404':
+          description: 文件不存在
+

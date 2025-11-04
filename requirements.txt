@@ -1,0 +1,10 @@
+vanna
+pyyaml
+flask
+flask-cors
+pandas
+requests
+# 可选：如果需要使用 OpenAI 兼容 API 或 vLLM，取消下面的注释
+# vanna[openai]
+# 或者直接安装：pip install vanna[openai]
+
