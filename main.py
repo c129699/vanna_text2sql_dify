@@ -44,7 +44,7 @@ def main():
         'app',
         nargs='?',
         choices=['vanna', 'api'],
-        default='api',
+        default='vanna',
         help='要启动的应用类型：vanna (Web UI) 或 api (API 服务器，默认)'
     )
     

@@ -15,6 +15,19 @@
 1. **Vanna Web UI**：提供交互式的 Web 界面，支持可视化查询和 SQL 生成
 2. **API 服务器**：提供 RESTful API 接口，供 Dify 等外部系统调用
 
+### 效果示例
+### 1.vanna
+#### 1.1. 文本转 SQL
+![img.png](img.png)
+#### 1.2. 统计结果绘图
+![img_1.png](img_1.png)
+### 1.3. 训练数据管理
+![img_2.png](img_2.png)
+### 2. 接入dify
+#### 2.1 工具定义
+![img_3.png](img_3.png)
+#### 2.2 运行结果
+![img_4.png](img_4.png)
 ## 项目架构
 
 ### 架构设计
@@ -68,14 +81,16 @@ pip install -r requirements.txt
 
 #### 1. 启动 API 服务器（默认模式）
 ```bash
+# 使用自定义配置文件
+python main.py --config custom_config.yaml
+
 # 使用默认配置
 python main.py
 
 # 或显式指定
 python main.py api
 
-# 使用自定义配置文件
-python main.py --config custom_config.yaml
+
 ```
 
 #### 2. 启动 Vanna Web UI
@@ -348,5 +363,5 @@ print(result["data"])
 
 ## 许可证
 
-本项目基于 Vanna 框架开发，请遵循相应的开源许可证。
+本项目基于 Vanna和 Dify 框架开发，请遵循相应的开源许可证。
 
