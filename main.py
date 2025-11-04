@@ -1,8 +1,9 @@
 """
 V2 重构版本主入口
-支持启动两种应用：
+支持启动三种应用模式：
 1. vanna_app: Vanna Web UI
 2. api_app: API 服务器（供 Dify 调用）
+3. unified: 统一应用（同时提供 Web UI 和 API，共享同一端口）
 """
 import sys
 import os
@@ -15,6 +16,7 @@ if current_dir not in sys.path:
 
 from apps.vanna_app import VannaApp
 from apps.api_app import APIApp
+from apps.unified_app import UnifiedApp
 from dependencies import DependencyContainer
 
 
@@ -25,17 +27,17 @@ def main():
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
 示例:
-  # 启动 API 服务器（默认）
-  python main.py
+  # 启动统一应用（同时提供 Web UI 和 API，推荐）
+  python main.py unified
   
   # 启动 Vanna Web UI
   python main.py vanna
   
-  # 启动 API 服务器（显式指定）
+  # 启动 API 服务器
   python main.py api
   
   # 使用自定义配置文件
-  python main.py --config custom_config.yaml
+  python main.py unified --config custom_config.yaml
   python main.py vanna --config custom_config.yaml
         """
     )
@@ -43,9 +45,9 @@ def main():
     parser.add_argument(
         'app',
         nargs='?',
-        choices=['vanna', 'api'],
-        default='vanna',
-        help='要启动的应用类型：vanna (Web UI) 或 api (API 服务器，默认)'
+        choices=['vanna', 'api', 'unified'],
+        default='unified',
+        help='要启动的应用类型：vanna (Web UI)、api (API 服务器) 或 unified (统一应用，同时提供 Web UI 和 API，默认)'
     )
     
     parser.add_argument(
@@ -90,6 +92,9 @@ def main():
         app.run(host=host, port=port, debug=debug)
     elif args.app == 'api':
         app = APIApp(container)
+        app.run(host=host, port=port, debug=debug)
+    elif args.app == 'unified':
+        app = UnifiedApp(container)
         app.run(host=host, port=port, debug=debug)
 
 
