@@ -1,9 +1,5 @@
 [
   {
-    "question": "查询支持在线办理的事项",
-    "sql": "SELECT matter_name, ssqd_dept_name FROM info_fwsx_ssqd WHERE hanle_form_name LIKE '%在线%' AND del_flag = '0'"
-  },
-  {
     "question": "查询所有支持预约办理的事项",
     "sql": "SELECT matter_name, ssqd_dept_name FROM info_fwsx_ssqd WHERE is_book = '1' AND del_flag = '0'"
   },
@@ -12,12 +8,8 @@
     "sql": "SELECT matter_name, ssqd_dept_name FROM info_fwsx_ssqd WHERE is_charge = '0' AND del_flag = '0'"
   },
   {
-    "question": "查询所有需要收费的事项",
-    "sql": "SELECT matter_name, ssqd_dept_name FROM info_fwsx_ssqd WHERE is_charge = '1' AND del_flag = '0'"
-  },
-  {
-    "question": "查询某部门的事项列表，例如教育局",
-    "sql": "SELECT matter_name FROM info_fwsx_ssqd WHERE ssqd_dept_name LIKE '%教育%' AND del_flag = '0'"
+    "question": "查询宣城市科学技术局的事项列表",
+    "sql": "SELECT matter_name FROM info_fwsx_ssqd WHERE ssqd_dept_name LIKE '%宣城市科学技术局%' AND del_flag = '0'"
   },
   {
     "question": "查询包含证明依据内容的事项",
@@ -28,12 +20,8 @@
     "sql": "SELECT matter_name, hanle_proc FROM info_fwsx_ssqd WHERE hanle_proc IS NOT NULL AND hanle_proc <> '' AND del_flag = '0'"
   },
   {
-    "question": "查询支持物流快递领取结果的事项",
-    "sql": "SELECT matter_name FROM info_fwsx_ssqd WHERE result_receive_way_name LIKE '%快递%' AND del_flag = '0'"
-  },
-  {
-    "question": "查询某地市（例如合肥市）的事项",
-    "sql": "SELECT matter_name, ssqd_dept_name FROM info_fwsx_ssqd WHERE xzqh_parent_code = '合肥市' AND del_flag = '0'"
+    "question": "查询合肥市的事项",
+    "sql": "SELECT matter_name, ssqd_dept_name FROM info_fwsx_ssqd WHERE xzqh_name like '%合肥市%' AND del_flag = '0'"
   },
   {
     "question": "查询区县级办理的事项",
@@ -45,7 +33,7 @@
   },
   {
     "question": "查询支持现场办理的事项",
-    "sql": "SELECT matter_name FROM info_fwsx_ssqd WHERE hanle_form_name LIKE '%现场%' AND del_flag = '0'"
+    "sql": "SELECT matter_name FROM info_fwsx_ssqd WHERE hanle_form_name LIKE '%窗口办理%' AND del_flag = '0'"
   },
   {
     "question": "查询咨询电话不为空的事项",
@@ -54,10 +42,6 @@
   {
     "question": "查询监督投诉电话不为空的事项",
     "sql": "SELECT matter_name, ts_phone FROM info_fwsx_ssqd WHERE ts_phone IS NOT NULL AND ts_phone <> '' AND del_flag = '0'"
-  },
-  {
-    "question": "查询承诺办结时间包含工作日的事项",
-    "sql": "SELECT matter_name, promise_time FROM info_fwsx_ssqd WHERE promise_time LIKE '%工作日%' AND del_flag = '0'"
   },
   {
     "question": "按部门统计事项数量",
@@ -84,14 +68,6 @@
     "sql": "SELECT matter_name, hanle_time FROM info_fwsx_ssqd WHERE hanle_time LIKE '%周六%' OR hanle_time LIKE '%周日%' AND del_flag = '0'"
   },
   {
-    "question": "查询办理时间说明为空的事项",
-    "sql": "SELECT matter_name FROM info_fwsx_ssqd WHERE (hanle_time IS NULL OR hanle_time = '') AND del_flag = '0'"
-  },
-  {
-    "question": "查询承诺办结时限为空的事项",
-    "sql": "SELECT matter_name FROM info_fwsx_ssqd WHERE (promise_time IS NULL OR promise_time = '') AND del_flag = '0'"
-  },
-  {
     "question": "查询事项名称包含申请的事项",
     "sql": "SELECT matter_name FROM info_fwsx_ssqd WHERE matter_name LIKE '%申请%' AND del_flag = '0'"
   },
@@ -112,14 +88,6 @@
     "sql": "SELECT matter_name FROM info_fwsx_ssqd WHERE enactment IS NOT NULL AND enactment <> '' AND del_flag = '0'"
   },
   {
-    "question": "查询办理时间段包含夜间的事项",
-    "sql": "SELECT matter_name, hanle_time_range FROM info_fwsx_ssqd WHERE hanle_time_range LIKE '%夜%' AND del_flag = '0'"
-  },
-  {
-    "question": "查询支持线下办理的事项",
-    "sql": "SELECT matter_name FROM info_fwsx_ssqd WHERE hanle_form_name LIKE '%线下%' AND del_flag = '0'"
-  },
-  {
     "question": "查询支持手机端申请的事项",
     "sql": "SELECT matter_name, app_apply_url FROM info_fwsx_ssqd WHERE app_apply_url IS NOT NULL AND app_apply_url <> '' AND del_flag = '0'"
   },
@@ -128,8 +96,8 @@
     "sql": "SELECT matter_name, gateway_apply_url FROM info_fwsx_ssqd WHERE gateway_apply_url IS NOT NULL AND gateway_apply_url <> '' AND del_flag = '0'"
   },
   {
-    "question": "查询某区县的事项，例如蜀山区",
-    "sql": "SELECT matter_name FROM info_fwsx_ssqd WHERE xzqh_name = '蜀山区' AND del_flag = '0'"
+    "question": "查询蜀山的事项",
+    "sql": "SELECT matter_name FROM info_fwsx_ssqd WHERE xzqh_name like '%蜀山区%' AND del_flag = '0'"
   },
   {
     "question": "查询行政区划为空的事项",
@@ -154,10 +122,6 @@
   {
     "question": "查询受理条件为空的事项",
     "sql": "SELECT matter_name FROM info_fwsx_ssqd WHERE (accept_condition IS NULL OR accept_condition = '') AND del_flag = '0'"
-  },
-  {
-    "question": "查询创建人为空的事项",
-    "sql": "SELECT matter_name FROM info_fwsx_ssqd WHERE (create_by IS NULL OR create_by = '') AND del_flag = '0'"
   },
   {
     "question": "查询更新时间为空的事项",
@@ -194,5 +158,37 @@
   {
     "question": "查询事项名称包含注销的事项",
     "sql": "SELECT matter_name FROM info_fwsx_ssqd WHERE matter_name LIKE '%注销%' AND del_flag = '0'"
+  },
+  {
+    "question": "实施主体是黄山市科学技术局的可用办事项有哪些？",
+    "sql": "SELECT matter_name FROM info_fwsx_ssqd WHERE ssqd_dept_name = '黄山市科学技术局' AND del_flag = '0'"
+  },
+  {
+    "question": "可以线上办理的办事项有哪些？",
+    "sql": "SELECT matter_name, hanle_form_name FROM info_fwsx_ssqd WHERE hanle_form_name LIKE '%在线%' AND del_flag = '0'"
+  },
+  {
+    "question": "按行政区划统计事项数量。",
+    "sql": "SELECT xzqh_name, COUNT(*) AS matter_count FROM info_fwsx_ssqd WHERE del_flag = '0' GROUP BY xzqh_name ORDER BY matter_count DESC"
+  },
+  {
+    "question": "按照实施主体统计办事项数量。",
+    "sql": "SELECT ssqd_dept_name, COUNT(*) AS matter_count \nFROM info_fwsx_ssqd \nWHERE del_flag = '0' \nGROUP BY ssqd_dept_name \nORDER BY matter_count DESC;"
+  },
+  {
+    "question": "查询省级通办的项目。",
+    "sql": "SELECT matter_name FROM info_fwsx_ssqd WHERE xzqh_jb = '1' AND del_flag = '0'"
+  },
+  {
+    "question": "查询蜀山区可以办理的项目",
+    "sql": "SELECT matter_name FROM info_fwsx_ssqd WHERE xzqh_name = '蜀山区' AND del_flag = '0'"
+  },
+  {
+    "question": "查询支持 PC 端办理的事项及其网址",
+    "sql": "SELECT matter_name, gateway_apply_url FROM info_fwsx_ssqd WHERE gateway_apply_url IS NOT NULL AND gateway_apply_url <> '' AND del_flag = '0'"
+  },
+  {
+    "question": "查询大型科学仪器设备入网事项的可办区域和相关联系人",
+    "sql": "SELECT xzqh_name AS 可办区域, zx_phone AS 联系人 \nFROM info_fwsx_ssqd \nWHERE matter_name LIKE '%大型科学仪器设备入网%' \n  AND del_flag = '0' \nORDER BY xzqh_name;"
   }
 ]
