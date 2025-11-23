@@ -1,194 +1,158 @@
 [
   {
-    "question": "查询所有支持预约办理的事项",
-    "sql": "SELECT matter_name, ssqd_dept_name FROM info_fwsx_ssqd WHERE is_book = '1' AND del_flag = '0'"
+    "question": "查询高新技术企业认定在合肥市的详细信息",
+    "sql": "SELECT ssqd_dept_name, accept_condition, hanle_time, hanle_addr, zx_phone, ts_phone, enactment, hanle_proc, matter_name, xzqh_jb, xzqh_name, app_apply_url, gateway_apply_url FROM info_fwsx_ssqd WHERE matter_name LIKE '%高新技术企业%' AND (xzqh_name LIKE '%合肥%' OR xzqh_name LIKE '%安徽省%')"
   },
   {
-    "question": "查询所有不收费用的事项",
-    "sql": "SELECT matter_name, ssqd_dept_name FROM info_fwsx_ssqd WHERE is_charge = '0' AND del_flag = '0'"
+    "question": "查询创业补贴在宿州市的完整信息",
+    "sql": "SELECT ssqd_dept_name, accept_condition, hanle_time, hanle_addr, zx_phone, ts_phone, enactment, hanle_proc, matter_name, xzqh_jb, xzqh_name, app_apply_url, gateway_apply_url FROM info_fwsx_ssqd WHERE matter_name LIKE '%创业补贴%' AND (xzqh_name LIKE '%宿州%' OR xzqh_name LIKE '%安徽省%')"
   },
   {
-    "question": "查询宣城市科学技术局的事项列表",
-    "sql": "SELECT matter_name FROM info_fwsx_ssqd WHERE ssqd_dept_name LIKE '%宣城市科学技术局%' AND del_flag = '0'"
+    "question": "查询企业研发费用加计扣除在亳州市的详细信息",
+    "sql": "SELECT ssqd_dept_name, accept_condition, hanle_time, hanle_addr, zx_phone, ts_phone, enactment, hanle_proc, matter_name, xzqh_jb, xzqh_name, app_apply_url, gateway_apply_url FROM info_fwsx_ssqd WHERE matter_name LIKE '%研发费用%' AND (xzqh_name LIKE '%亳州%' OR xzqh_name LIKE '%安徽省%')"
   },
   {
-    "question": "查询包含证明依据内容的事项",
-    "sql": "SELECT matter_name, enactment FROM info_fwsx_ssqd WHERE enactment IS NOT NULL AND enactment <> '' AND del_flag = '0'"
+    "question": "查询人才引进在芜湖市的完整信息",
+    "sql": "SELECT ssqd_dept_name, accept_condition, hanle_time, hanle_addr, zx_phone, ts_phone, enactment, hanle_proc, matter_name, xzqh_jb, xzqh_name, app_apply_url, gateway_apply_url FROM info_fwsx_ssqd WHERE matter_name LIKE '%人才引进%' AND (xzqh_name LIKE '%芜湖%' OR xzqh_name LIKE '%安徽省%')"
   },
   {
-    "question": "查询有办理流程说明的事项",
-    "sql": "SELECT matter_name, hanle_proc FROM info_fwsx_ssqd WHERE hanle_proc IS NOT NULL AND hanle_proc <> '' AND del_flag = '0'"
+    "question": "查询企业认定在蚌埠市的详细信息",
+    "sql": "SELECT ssqd_dept_name, accept_condition, hanle_time, hanle_addr, zx_phone, ts_phone, enactment, hanle_proc, matter_name, xzqh_jb, xzqh_name, app_apply_url, gateway_apply_url FROM info_fwsx_ssqd WHERE matter_name LIKE '%企业认定%' AND (xzqh_name LIKE '%蚌埠%' OR xzqh_name LIKE '%安徽省%')"
   },
   {
-    "question": "查询合肥市的事项",
-    "sql": "SELECT matter_name, ssqd_dept_name FROM info_fwsx_ssqd WHERE xzqh_name like '%合肥市%' AND del_flag = '0'"
+    "question": "查询补贴申请在合肥市的完整信息",
+    "sql": "SELECT ssqd_dept_name, accept_condition, hanle_time, hanle_addr, zx_phone, ts_phone, enactment, hanle_proc, matter_name, xzqh_jb, xzqh_name, app_apply_url, gateway_apply_url FROM info_fwsx_ssqd WHERE matter_name LIKE '%补贴%' AND (xzqh_name LIKE '%合肥%' OR xzqh_name LIKE '%安徽省%')"
   },
   {
-    "question": "查询区县级办理的事项",
-    "sql": "SELECT matter_name FROM info_fwsx_ssqd WHERE xzqh_jb = '3' AND del_flag = '0'"
+    "question": "查询奖励政策在宿州市的详细信息",
+    "sql": "SELECT ssqd_dept_name, accept_condition, hanle_time, hanle_addr, zx_phone, ts_phone, enactment, hanle_proc, matter_name, xzqh_jb, xzqh_name, app_apply_url, gateway_apply_url FROM info_fwsx_ssqd WHERE matter_name LIKE '%奖励%' AND (xzqh_name LIKE '%宿州%' OR xzqh_name LIKE '%安徽省%')"
   },
   {
-    "question": "查询省级层面的办事事项",
-    "sql": "SELECT matter_name FROM info_fwsx_ssqd WHERE xzqh_jb = '1' AND del_flag = '0'"
+    "question": "查询知识产权申请在亳州市的完整信息",
+    "sql": "SELECT ssqd_dept_name, accept_condition, hanle_time, hanle_addr, zx_phone, ts_phone, enactment, hanle_proc, matter_name, xzqh_jb, xzqh_name, app_apply_url, gateway_apply_url FROM info_fwsx_ssqd WHERE matter_name LIKE '%知识产权%' AND (xzqh_name LIKE '%亳州%' OR xzqh_name LIKE '%安徽省%')"
   },
   {
-    "question": "查询支持现场办理的事项",
-    "sql": "SELECT matter_name FROM info_fwsx_ssqd WHERE hanle_form_name LIKE '%窗口办理%' AND del_flag = '0'"
+    "question": "查询成果转化在芜湖市的详细信息",
+    "sql": "SELECT ssqd_dept_name, accept_condition, hanle_time, hanle_addr, zx_phone, ts_phone, enactment, hanle_proc, matter_name, xzqh_jb, xzqh_name, app_apply_url, gateway_apply_url FROM info_fwsx_ssqd WHERE matter_name LIKE '%成果转化%' AND (xzqh_name LIKE '%芜湖%' OR xzqh_name LIKE '%安徽省%')"
   },
   {
-    "question": "查询咨询电话不为空的事项",
-    "sql": "SELECT matter_name, zx_phone FROM info_fwsx_ssqd WHERE zx_phone IS NOT NULL AND zx_phone <> '' AND del_flag = '0'"
+    "question": "查询技术改造在蚌埠市的完整信息",
+    "sql": "SELECT ssqd_dept_name, accept_condition, hanle_time, hanle_addr, zx_phone, ts_phone, enactment, hanle_proc, matter_name, xzqh_jb, xzqh_name, app_apply_url, gateway_apply_url FROM info_fwsx_ssqd WHERE matter_name LIKE '%技术改造%' AND (xzqh_name LIKE '%蚌埠%' OR xzqh_name LIKE '%安徽省%')"
   },
   {
-    "question": "查询监督投诉电话不为空的事项",
-    "sql": "SELECT matter_name, ts_phone FROM info_fwsx_ssqd WHERE ts_phone IS NOT NULL AND ts_phone <> '' AND del_flag = '0'"
+    "question": "查询高新技术企业在瑶海区的详细信息",
+    "sql": "SELECT ssqd_dept_name, accept_condition, hanle_time, hanle_addr, zx_phone, ts_phone, enactment, hanle_proc, matter_name, xzqh_jb, xzqh_name, app_apply_url, gateway_apply_url FROM info_fwsx_ssqd WHERE matter_name LIKE '%高新技术企业%' AND (xzqh_name LIKE '%瑶海%' OR xzqh_name LIKE '%合肥%' OR xzqh_name LIKE '%安徽省%')"
   },
   {
-    "question": "按部门统计事项数量",
-    "sql": "SELECT ssqd_dept_name, COUNT(*) AS matter_count FROM info_fwsx_ssqd WHERE del_flag = '0' GROUP BY ssqd_dept_name"
+    "question": "查询创业补贴在包河区的完整信息",
+    "sql": "SELECT ssqd_dept_name, accept_condition, hanle_time, hanle_addr, zx_phone, ts_phone, enactment, hanle_proc, matter_name, xzqh_jb, xzqh_name, app_apply_url, gateway_apply_url FROM info_fwsx_ssqd WHERE matter_name LIKE '%创业补贴%' AND (xzqh_name LIKE '%包河%' OR xzqh_name LIKE '%合肥%' OR xzqh_name LIKE '%安徽省%')"
   },
   {
-    "question": "查询办事地址为空的事项",
-    "sql": "SELECT matter_name FROM info_fwsx_ssqd WHERE (hanle_addr IS NULL OR hanle_addr = '') AND del_flag = '0'"
+    "question": "查询企业认定在庐阳区的详细信息",
+    "sql": "SELECT ssqd_dept_name, accept_condition, hanle_time, hanle_addr, zx_phone, ts_phone, enactment, hanle_proc, matter_name, xzqh_jb, xzqh_name, app_apply_url, gateway_apply_url FROM info_fwsx_ssqd WHERE matter_name LIKE '%企业认定%' AND (xzqh_name LIKE '%庐阳%' OR xzqh_name LIKE '%合肥%' OR xzqh_name LIKE '%安徽省%')"
   },
   {
-    "question": "查询支持电话咨询的事项",
-    "sql": "SELECT matter_name, zx_phone FROM info_fwsx_ssqd WHERE zx_phone IS NOT NULL AND zx_phone <> '' AND del_flag = '0'"
+    "question": "查询研发费用在蜀山区的完整信息",
+    "sql": "SELECT ssqd_dept_name, accept_condition, hanle_time, hanle_addr, zx_phone, ts_phone, enactment, hanle_proc, matter_name, xzqh_name, xzqh_jb, app_apply_url, gateway_apply_url FROM info_fwsx_ssqd WHERE matter_name LIKE '%研发费用%' AND (xzqh_name LIKE '%蜀山%' OR xzqh_name LIKE '%合肥%' OR xzqh_name LIKE '%安徽省%')"
   },
   {
-    "question": "查询最近更新的十条事项",
-    "sql": "SELECT matter_name, update_time FROM info_fwsx_ssqd WHERE del_flag = '0' ORDER BY update_time DESC LIMIT 10"
+    "question": "查询补贴申请在埇桥区的详细信息",
+    "sql": "SELECT ssqd_dept_name, accept_condition, hanle_time, hanle_addr, zx_phone, ts_phone, enactment, hanle_proc, matter_name, xzqh_jb, xzqh_name, app_apply_url, gateway_apply_url FROM info_fwsx_ssqd WHERE matter_name LIKE '%补贴%' AND (xzqh_name LIKE '%埇桥%' OR xzqh_name LIKE '%宿州%' OR xzqh_name LIKE '%安徽省%')"
   },
   {
-    "question": "查询最近创建的五条事项",
-    "sql": "SELECT matter_name, create_time FROM info_fwsx_ssqd WHERE del_flag = '0' ORDER BY create_time DESC LIMIT 5"
+    "question": "查询人才政策在谯城区的完整信息",
+    "sql": "SELECT ssqd_dept_name, accept_condition, hanle_time, hanle_addr, zx_phone, ts_phone, enactment, hanle_proc, matter_name, xzqh_jb, xzqh_name, app_apply_url, gateway_apply_url FROM info_fwsx_ssqd WHERE matter_name LIKE '%人才%' AND (xzqh_name LIKE '%谯城%' OR xzqh_name LIKE '%亳州%' OR xzqh_name LIKE '%安徽省%')"
   },
   {
-    "question": "查询办理时间包含周末的事项",
-    "sql": "SELECT matter_name, hanle_time FROM info_fwsx_ssqd WHERE hanle_time LIKE '%周六%' OR hanle_time LIKE '%周日%' AND del_flag = '0'"
+    "question": "查询创新奖励在镜湖区的详细信息",
+    "sql": "SELECT ssqd_dept_name, accept_condition, hanle_time, hanle_addr, zx_phone, ts_phone, enactment, hanle_proc, matter_name, xzqh_jb, xzqh_name, app_apply_url, gateway_apply_url FROM info_fwsx_ssqd WHERE matter_name LIKE '%创新%' AND (xzqh_name LIKE '%镜湖%' OR xzqh_name LIKE '%芜湖%' OR xzqh_name LIKE '%安徽省%')"
   },
   {
-    "question": "查询事项名称包含申请的事项",
-    "sql": "SELECT matter_name FROM info_fwsx_ssqd WHERE matter_name LIKE '%申请%' AND del_flag = '0'"
+    "question": "查询企业申报在龙子湖区的完整信息",
+    "sql": "SELECT ssqd_dept_name, accept_condition, hanle_time, hanle_addr, zx_phone, ts_phone, enactment, hanle_proc, matter_name, xzqh_jb, xzqh_name, app_apply_url, gateway_apply_url FROM info_fwsx_ssqd WHERE matter_name LIKE '%企业申报%' AND (xzqh_name LIKE '%龙子湖%' OR xzqh_name LIKE '%蚌埠%' OR xzqh_name LIKE '%安徽省%')"
   },
   {
-    "question": "查询事项名称包含补贴的事项",
-    "sql": "SELECT matter_name FROM info_fwsx_ssqd WHERE matter_name LIKE '%补贴%' AND del_flag = '0'"
+    "question": "查询高新技术企业在安徽省的详细信息",
+    "sql": "SELECT ssqd_dept_name, accept_condition, hanle_time, hanle_addr, zx_phone, ts_phone, enactment, hanle_proc, matter_name, xzqh_jb, xzqh_name, app_apply_url, gateway_apply_url FROM info_fwsx_ssqd WHERE matter_name LIKE '%高新技术企业%' AND xzqh_name LIKE '%安徽省%'"
   },
   {
-    "question": "查询事项名称包含证的事项",
-    "sql": "SELECT matter_name FROM info_fwsx_ssqd WHERE matter_name LIKE '%证%' AND del_flag = '0'"
+    "question": "查询创业补贴在安徽省的完整信息",
+    "sql": "SELECT ssqd_dept_name, accept_condition, hanle_time, hanle_addr, zx_phone, ts_phone, enactment, hanle_proc, matter_name, xzqh_jb, xzqh_name, app_apply_url, gateway_apply_url FROM info_fwsx_ssqd WHERE matter_name LIKE '%创业补贴%' AND xzqh_name LIKE '%安徽省%'"
   },
   {
-    "question": "统计省市县等级事项数量",
-    "sql": "SELECT xzqh_jb, COUNT(*) FROM info_fwsx_ssqd WHERE del_flag = '0' GROUP BY xzqh_jb"
+    "question": "查询研发费用加计扣除在安徽省的详细信息",
+    "sql": "SELECT ssqd_dept_name, accept_condition, hanle_time, hanle_addr, zx_phone, ts_phone, enactment, hanle_proc, matter_name, xzqh_jb, xzqh_name, app_apply_url, gateway_apply_url FROM info_fwsx_ssqd WHERE matter_name LIKE '%研发费用%' AND xzqh_name LIKE '%安徽省%'"
   },
   {
-    "question": "查询有设定依据说明的事项",
-    "sql": "SELECT matter_name FROM info_fwsx_ssqd WHERE enactment IS NOT NULL AND enactment <> '' AND del_flag = '0'"
+    "question": "查询企业认定在合肥的详细信息",
+    "sql": "SELECT ssqd_dept_name, accept_condition, hanle_time, hanle_addr, zx_phone, ts_phone, enactment, hanle_proc, matter_name, xzqh_jb, xzqh_name, app_apply_url, gateway_apply_url FROM info_fwsx_ssqd WHERE matter_name LIKE '%企业认定%' AND (xzqh_name LIKE '%合肥%' OR xzqh_name LIKE '%安徽省%')"
   },
   {
-    "question": "查询支持手机端申请的事项",
-    "sql": "SELECT matter_name, app_apply_url FROM info_fwsx_ssqd WHERE app_apply_url IS NOT NULL AND app_apply_url <> '' AND del_flag = '0'"
+    "question": "查询补贴在宿州的完整信息",
+    "sql": "SELECT ssqd_dept_name, accept_condition, hanle_time, hanle_addr, zx_phone, ts_phone, enactment, hanle_proc, matter_name, xzqh_jb, xzqh_name, app_apply_url, gateway_apply_url FROM info_fwsx_ssqd WHERE matter_name LIKE '%补贴%' AND (xzqh_name LIKE '%宿州%' OR xzqh_name LIKE '%安徽省%')"
   },
   {
-    "question": "查询支持 PC 端办理的网址",
-    "sql": "SELECT matter_name, gateway_apply_url FROM info_fwsx_ssqd WHERE gateway_apply_url IS NOT NULL AND gateway_apply_url <> '' AND del_flag = '0'"
+    "question": "查询奖励在亳州的详细信息",
+    "sql": "SELECT ssqd_dept_name, accept_condition, hanle_time, hanle_addr, zx_phone, ts_phone, enactment, hanle_proc, matter_name, xzqh_jb, xzqh_name, app_apply_url, gateway_apply_url FROM info_fwsx_ssqd WHERE matter_name LIKE '%奖励%' AND (xzqh_name LIKE '%亳州%' OR xzqh_name LIKE '%安徽省%')"
   },
   {
-    "question": "查询蜀山的事项",
-    "sql": "SELECT matter_name FROM info_fwsx_ssqd WHERE xzqh_name like '%蜀山区%' AND del_flag = '0'"
+    "question": "查询知识产权在芜湖的完整信息",
+    "sql": "SELECT ssqd_dept_name, accept_condition, hanle_time, hanle_addr, zx_phone, ts_phone, enactment, hanle_proc, matter_name, xzqh_jb, xzqh_name, app_apply_url, gateway_apply_url FROM info_fwsx_ssqd WHERE matter_name LIKE '%知识产权%' AND (xzqh_name LIKE '%芜湖%' OR xzqh_name LIKE '%安徽省%')"
   },
   {
-    "question": "查询行政区划为空的事项",
-    "sql": "SELECT matter_name FROM info_fwsx_ssqd WHERE (xzqh_code IS NULL OR xzqh_code = '') AND del_flag = '0'"
+    "question": "查询成果转化在蚌埠的详细信息",
+    "sql": "SELECT ssqd_dept_name, accept_condition, hanle_time, hanle_addr, zx_phone, ts_phone, enactment, hanle_proc, matter_name, xzqh_jb, xzqh_name, app_apply_url, gateway_apply_url FROM info_fwsx_ssqd WHERE matter_name LIKE '%成果转化%' AND (xzqh_name LIKE '%蚌埠%' OR xzqh_name LIKE '%安徽省%')"
   },
   {
-    "question": "查询部门编码为空的事项",
-    "sql": "SELECT matter_name FROM info_fwsx_ssqd WHERE (ssqd_dept_code IS NULL OR ssqd_dept_code = '') AND del_flag = '0'"
+    "question": "查询技术改造在淮南的完整信息",
+    "sql": "SELECT ssqd_dept_name, accept_condition, hanle_time, hanle_addr, zx_phone, ts_phone, enactment, hanle_proc, matter_name, xzqh_jb, xzqh_name, app_apply_url, gateway_apply_url FROM info_fwsx_ssqd WHERE matter_name LIKE '%技术改造%' AND (xzqh_name LIKE '%淮南%' OR xzqh_name LIKE '%安徽省%')"
   },
   {
-    "question": "查询行政区划名称包含市的事项",
-    "sql": "SELECT matter_name FROM info_fwsx_ssqd WHERE xzqh_name LIKE '%市%' AND del_flag = '0'"
+    "question": "查询专精特新在淮北的详细信息",
+    "sql": "SELECT ssqd_dept_name, accept_condition, hanle_time, hanle_addr, zx_phone, ts_phone, enactment, hanle_proc, matter_name, xzqh_jb, xzqh_name, app_apply_url, gateway_apply_url FROM info_fwsx_ssqd WHERE matter_name LIKE '%专精特新%' AND (xzqh_name LIKE '%淮北%' OR xzqh_name LIKE '%安徽省%')"
   },
   {
-    "question": "查询行政区划级别为空的事项",
-    "sql": "SELECT matter_name FROM info_fwsx_ssqd WHERE xzqh_jb IS NULL AND del_flag = '0'"
+    "question": "查询绿色生产在铜陵的完整信息",
+    "sql": "SELECT ssqd_dept_name, accept_condition, hanle_time, hanle_addr, zx_phone, ts_phone, enactment, hanle_proc, matter_name, xzqh_jb, xzqh_name, app_apply_url, gateway_apply_url FROM info_fwsx_ssqd WHERE matter_name LIKE '%绿色%' AND (xzqh_name LIKE '%铜陵%' OR xzqh_name LIKE '%安徽省%')"
   },
   {
-    "question": "查询有受理条件的事项",
-    "sql": "SELECT matter_name, accept_condition FROM info_fwsx_ssqd WHERE accept_condition IS NOT NULL AND accept_condition <> '' AND del_flag = '0'"
+    "question": "查询智能网联在安庆的详细信息",
+    "sql": "SELECT ssqd_dept_name, accept_condition, hanle_time, hanle_addr, zx_phone, ts_phone, enactment, hanle_proc, matter_name, xzqh_jb, xzqh_name, app_apply_url, gateway_apply_url FROM info_fwsx_ssqd WHERE matter_name LIKE '%智能网联%' AND (xzqh_name LIKE '%安庆%' OR xzqh_name LIKE '%安徽省%')"
   },
   {
-    "question": "查询受理条件为空的事项",
-    "sql": "SELECT matter_name FROM info_fwsx_ssqd WHERE (accept_condition IS NULL OR accept_condition = '') AND del_flag = '0'"
+    "question": "查询三首产品在黄山的完整信息",
+    "sql": "SELECT ssqd_dept_name, accept_condition, hanle_time, hanle_addr, zx_phone, ts_phone, enactment, hanle_proc, matter_name, xzqh_jb, xzqh_name, app_apply_url, gateway_apply_url FROM info_fwsx_ssqd WHERE matter_name LIKE '%三首%' AND (xzqh_name LIKE '%黄山%' OR xzqh_name LIKE '%安徽省%')"
   },
   {
-    "question": "查询更新时间为空的事项",
-    "sql": "SELECT matter_name FROM info_fwsx_ssqd WHERE update_time IS NULL AND del_flag = '0'"
+    "question": "查询众创空间在滁州的详细信息",
+    "sql": "SELECT ssqd_dept_name, accept_condition, hanle_time, hanle_addr, zx_phone, ts_phone, enactment, hanle_proc, matter_name, xzqh_jb, xzqh_name, app_apply_url, gateway_apply_url FROM info_fwsx_ssqd WHERE matter_name LIKE '%众创空间%' AND (xzqh_name LIKE '%滁州%' OR xzqh_name LIKE '%安徽省%')"
   },
   {
-    "question": "查询未被删除的所有事项名称",
-    "sql": "SELECT matter_name FROM info_fwsx_ssqd WHERE del_flag = '0'"
+    "question": "查询担保在阜阳的完整信息",
+    "sql": "SELECT ssqd_dept_name, accept_condition, hanle_time, hanle_addr, zx_phone, ts_phone, enactment, hanle_proc, matter_name, xzqh_jb, xzqh_name, app_apply_url, gateway_apply_url FROM info_fwsx_ssqd WHERE matter_name LIKE '%担保%' AND (xzqh_name LIKE '%阜阳%' OR xzqh_name LIKE '%安徽省%')"
   },
   {
-    "question": "查询被标记删除的事项",
-    "sql": "SELECT matter_name FROM info_fwsx_ssqd WHERE del_flag = '1'"
+    "question": "查询挂牌在六安的详细信息",
+    "sql": "SELECT ssqd_dept_name, accept_condition, hanle_time, hanle_addr, zx_phone, ts_phone, enactment, hanle_proc, matter_name, xzqh_jb, xzqh_name, app_apply_url, gateway_apply_url FROM info_fwsx_ssqd WHERE matter_name LIKE '%挂牌%' AND (xzqh_name LIKE '%六安%' OR xzqh_name LIKE '%安徽省%')"
   },
   {
-    "question": "按行政区划统计事项数量",
-    "sql": "SELECT xzqh_name, COUNT(*) FROM info_fwsx_ssqd WHERE del_flag = '0' GROUP BY xzqh_name"
+    "question": "查询电商在马鞍山的完整信息",
+    "sql": "SELECT ssqd_dept_name, accept_condition, hanle_time, hanle_addr, zx_phone, ts_phone, enactment, hanle_proc, matter_name, xzqh_jb, xzqh_name, app_apply_url, gateway_apply_url FROM info_fwsx_ssqd WHERE matter_name LIKE '%电商%' AND (xzqh_name LIKE '%马鞍山%' OR xzqh_name LIKE '%安徽省%')"
   },
   {
-    "question": "查询办理方式字段为空的事项",
-    "sql": "SELECT matter_name FROM info_fwsx_ssqd WHERE (hanle_form_name IS NULL OR hanle_form_name = '') AND del_flag = '0'"
+    "question": "查询升规在池州的详细信息",
+    "sql": "SELECT ssqd_dept_name, accept_condition, hanle_time, hanle_addr, zx_phone, ts_phone, enactment, hanle_proc, matter_name, xzqh_jb, xzqh_name, app_apply_url, gateway_apply_url FROM info_fwsx_ssqd WHERE matter_name LIKE '%升规%' AND (xzqh_name LIKE '%池州%' OR xzqh_name LIKE '%安徽省%')"
   },
   {
-    "question": "查询支持邮寄结果的事项",
-    "sql": "SELECT matter_name FROM info_fwsx_ssqd WHERE result_receive_way_name LIKE '%邮寄%' AND del_flag = '0'"
+    "question": "查询认定在宣城的完整信息",
+    "sql": "SELECT ssqd_dept_name, accept_condition, hanle_time, hanle_addr, zx_phone, ts_phone, enactment, hanle_proc, matter_name, xzqh_jb, xzqh_name, app_apply_url, gateway_apply_url FROM info_fwsx_ssqd WHERE matter_name LIKE '%认定%' AND (xzqh_name LIKE '%宣城%' OR xzqh_name LIKE '%安徽省%')"
   },
   {
-    "question": "查询事项名称包含备案的事项",
-    "sql": "SELECT matter_name FROM info_fwsx_ssqd WHERE matter_name LIKE '%备案%' AND del_flag = '0'"
+    "question": "查询补助在亳州的详细信息",
+    "sql": "SELECT ssqd_dept_name, accept_condition, hanle_time, hanle_addr, zx_phone, ts_phone, enactment, hanle_proc, matter_name, xzqh_jb, xzqh_name, app_apply_url, gateway_apply_url FROM info_fwsx_ssqd WHERE matter_name LIKE '%补助%' AND (xzqh_name LIKE '%亳州%' OR xzqh_name LIKE '%安徽省%')"
   },
   {
-    "question": "查询事项名称包含变更的事项",
-    "sql": "SELECT matter_name FROM info_fwsx_ssqd WHERE matter_name LIKE '%变更%' AND del_flag = '0'"
-  },
-  {
-    "question": "查询事项名称包含注销的事项",
-    "sql": "SELECT matter_name FROM info_fwsx_ssqd WHERE matter_name LIKE '%注销%' AND del_flag = '0'"
-  },
-  {
-    "question": "实施主体是黄山市科学技术局的可用办事项有哪些？",
-    "sql": "SELECT matter_name FROM info_fwsx_ssqd WHERE ssqd_dept_name = '黄山市科学技术局' AND del_flag = '0'"
-  },
-  {
-    "question": "可以线上办理的办事项有哪些？",
-    "sql": "SELECT matter_name, hanle_form_name FROM info_fwsx_ssqd WHERE hanle_form_name LIKE '%在线%' AND del_flag = '0'"
-  },
-  {
-    "question": "按行政区划统计事项数量。",
-    "sql": "SELECT xzqh_name, COUNT(*) AS matter_count FROM info_fwsx_ssqd WHERE del_flag = '0' GROUP BY xzqh_name ORDER BY matter_count DESC"
-  },
-  {
-    "question": "按照实施主体统计办事项数量。",
-    "sql": "SELECT ssqd_dept_name, COUNT(*) AS matter_count \nFROM info_fwsx_ssqd \nWHERE del_flag = '0' \nGROUP BY ssqd_dept_name \nORDER BY matter_count DESC;"
-  },
-  {
-    "question": "查询省级通办的项目。",
-    "sql": "SELECT matter_name FROM info_fwsx_ssqd WHERE xzqh_jb = '1' AND del_flag = '0'"
-  },
-  {
-    "question": "查询蜀山区可以办理的项目",
-    "sql": "SELECT matter_name FROM info_fwsx_ssqd WHERE xzqh_name = '蜀山区' AND del_flag = '0'"
-  },
-  {
-    "question": "查询支持 PC 端办理的事项及其网址",
-    "sql": "SELECT matter_name, gateway_apply_url FROM info_fwsx_ssqd WHERE gateway_apply_url IS NOT NULL AND gateway_apply_url <> '' AND del_flag = '0'"
-  },
-  {
-    "question": "查询大型科学仪器设备入网事项的可办区域和相关联系人",
-    "sql": "SELECT xzqh_name AS 可办区域, zx_phone AS 联系人 \nFROM info_fwsx_ssqd \nWHERE matter_name LIKE '%大型科学仪器设备入网%' \n  AND del_flag = '0' \nORDER BY xzqh_name;"
+    "question": "查询设备在宿州的完整信息",
+    "sql": "SELECT ssqd_dept_name, accept_condition, hanle_time, hanle_addr, zx_phone, ts_phone, enactment, hanle_proc, matter_name, xzqh_jb, xzqh_name, app_apply_url, gateway_apply_url FROM info_fwsx_ssqd WHERE matter_name LIKE '%设备%' AND (xzqh_name LIKE '%宿州%' OR xzqh_name LIKE '%安徽省%')"
   }
 ]
