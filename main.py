@@ -5,9 +5,9 @@ V2 重构版本主入口
 2. api_app: API 服务器（供 Dify 调用）
 3. unified: 统一应用（同时提供 Web UI 和 API，共享同一端口）
 """
-import sys
-import os
 import argparse
+import os
+import sys
 
 # 添加当前目录到 Python 路径，确保可以导入模块
 current_dir = os.path.dirname(os.path.abspath(__file__))
@@ -41,7 +41,7 @@ def main():
   python main.py vanna --config custom_config.yaml
         """
     )
-    
+
     parser.add_argument(
         'app',
         nargs='?',
@@ -49,43 +49,43 @@ def main():
         default='unified',
         help='要启动的应用类型：vanna (Web UI)、api (API 服务器) 或 unified (统一应用，同时提供 Web UI 和 API，默认)'
     )
-    
+
     parser.add_argument(
         '--config',
         default='config.yaml',
         help='配置文件路径（默认: config.yaml）'
     )
-    
+
     parser.add_argument(
         '--host',
         help='服务器主机地址（覆盖配置文件中的设置）'
     )
-    
+
     parser.add_argument(
         '--port',
         type=int,
         help='服务器端口号（覆盖配置文件中的设置）'
     )
-    
+
     parser.add_argument(
         '--debug',
         action='store_true',
         help='开启调试模式（覆盖配置文件中的设置）'
     )
-    
+
     args = parser.parse_args()
-    
+
     # 创建依赖容器
     container = DependencyContainer(args.config)
-    
+
     # 获取 Flask 配置
     flask_config = container.config_loader.get_flask_config()
-    
+
     # 应用命令行参数覆盖配置
     host = args.host or flask_config.get('host', '0.0.0.0')
     port = args.port or flask_config.get('port', 5000)
     debug = args.debug if args.debug else flask_config.get('debug', False)
-    
+
     # 根据应用类型启动相应的应用
     if args.app == 'vanna':
         app = VannaApp(container)
@@ -100,4 +100,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
