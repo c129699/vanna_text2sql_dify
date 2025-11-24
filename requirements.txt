@@ -3,6 +3,7 @@ fastapi==0.120.4
 fastembed==0.7.3
 flake8==7.3.0
 flask-cors==6.0.1
+gunicorn==21.2.0
 h2==4.3.0
 httptools==0.7.1
 ollama==0.6.0
