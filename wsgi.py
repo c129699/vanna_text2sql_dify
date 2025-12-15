@@ -15,6 +15,9 @@ WSGI 入口文件
 import os
 import sys
 
+# 修复 tokenizers 并行性警告（必须在导入其他库之前设置）
+os.environ.setdefault('TOKENIZERS_PARALLELISM', 'false')
+
 # 添加当前目录到 Python 路径
 current_dir = os.path.dirname(os.path.abspath(__file__))
 if current_dir not in sys.path:

@@ -5,6 +5,9 @@ Gunicorn 配置文件
 import multiprocessing
 import os
 
+# 修复 tokenizers 并行性警告
+os.environ.setdefault('TOKENIZERS_PARALLELISM', 'false')
+
 # 服务器配置
 bind = os.environ.get('GUNICORN_BIND', '0.0.0.0:2523')
 workers = int(os.environ.get('GUNICORN_WORKERS', multiprocessing.cpu_count() * 2 + 1))
